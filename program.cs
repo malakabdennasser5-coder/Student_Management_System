@@ -206,7 +206,7 @@ namespace StudentManagementSystem
         {
             while (true)
             {
-                Console.WriteLine("\n=== Student Management System ===");
+                Console.WriteLine("=== Student Management System ===");
                 Console.WriteLine("1. Register New Student");
                 Console.WriteLine("2. View All Students");
                 Console.WriteLine("3. Search Student by ID");
@@ -239,8 +239,6 @@ namespace StudentManagementSystem
         {
             Console.Write("Enter Student ID: ");
             string id = Console.ReadLine();
-
-            // Check if ID already exists
             if (students.Any(s => s.ID == id))
             {
                 Console.WriteLine("Error: A student with this ID already exists.");
@@ -284,7 +282,7 @@ namespace StudentManagementSystem
             Console.Write("Enter Student ID to search: ");
             string id = Console.ReadLine();
 
-            var student = students.FirstOrDefault(s => s.ID == id);
+            var student = students.FirstOrDefault(x => s.ID == id);
 
             if (student == null)
             {
@@ -302,7 +300,7 @@ namespace StudentManagementSystem
             Console.Write("Enter Student ID to update: ");
             string id = Console.ReadLine();
 
-            var student = students.FirstOrDefault(s => s.ID == id);
+            var student = students.FirstOrDefault(x => s.ID == id);
 
             if (student == null)
             {
@@ -313,14 +311,14 @@ namespace StudentManagementSystem
             Console.WriteLine("Current information:");
             Console.WriteLine(student);
 
-            Console.WriteLine("\nEnter new information (press Enter to keep current value):");
+            Console.WriteLine("Enter new information (press Enter to keep current value):");
 
-            Console.Write($"Full Name ({student.FullName}): ");
+            Console.Write("Full Name ({student.FullName}): ");
             string name = Console.ReadLine();
             if (!string.IsNullOrWhiteSpace(name))
                 student.FullName = name;
 
-            Console.Write($"Age ({student.Age}): ");
+            Console.Write("Age ({student.Age}): ");
             string ageInput = Console.ReadLine();
             if (!string.IsNullOrWhiteSpace(ageInput) && int.TryParse(ageInput, out int age))
                 student.Age = age;
@@ -338,7 +336,7 @@ namespace StudentManagementSystem
             Console.Write("Enter Student ID to remove: ");
             string id = Console.ReadLine();
 
-            var student = students.FirstOrDefault(s => s.ID == id);
+            var student = students.FirstOrDefault(x => s.ID == id);
 
             if (student == null)
             {
