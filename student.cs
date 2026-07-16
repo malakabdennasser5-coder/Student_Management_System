@@ -4,7 +4,7 @@ using System.Text;
 
 namespace student_managment_system
 {
-    internal class student
+    public class student
     {
         int  age;
         string fullname, emailaddress, id;
